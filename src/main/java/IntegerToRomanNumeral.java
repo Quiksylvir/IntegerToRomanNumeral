@@ -1,5 +1,11 @@
+import java.util.HashMap;
+
 public class IntegerToRomanNumeral {
+
+    protected HashMap<Integer, String> integerMap = new HashMap<>();
+
     public String convertToRomanNumeral(int number) {
-        return "I";
+        integerMap.put(1, "I");
+        return (String) integerMap.get(number);
     }
 }
