@@ -3,12 +3,12 @@ public class IntegerToRomanNumeral {
 
 
     protected String convertToRomanNumeral(int number) {
-        int closestKey = getClosestKey(number);
-        if(checkIfExactToKey(number, closestKey) != null) {
-            return checkIfExactToKey(number, closestKey);
-        } else {
-            return buildRomanNumeralString(number, closestKey).toString();
-        }
+            int closestKey = getClosestKey(number);
+            if (checkIfExactToKey(number, closestKey) != null) {
+                return checkIfExactToKey(number, closestKey);
+            } else {
+                return buildRomanNumeralString(number, closestKey).toString();
+            }
     }
 
     private int getClosestKey(int number) {
@@ -16,12 +16,16 @@ public class IntegerToRomanNumeral {
     }
 
     private StringBuilder buildRomanNumeralString(int number, int closestKey) {
-        StringBuilder romanNumeralString = new StringBuilder();
-        while (number != 0) {
-            romanNumeralString.append(IntegerMap.integerMap.get(closestKey));
-            number--;
-        }
-        return romanNumeralString;
+            StringBuilder romanNumeralString = new StringBuilder();
+            while (number != 0) {
+                romanNumeralString.append(IntegerMap.integerMap.get(closestKey));
+                number -= closestKey;
+                if (number == 0) {
+                    break;
+                }
+                closestKey = IntegerMap.integerMap.floorKey(number);
+            }
+            return romanNumeralString;
     }
 
     private String checkIfExactToKey(int number, int closestKey) {
