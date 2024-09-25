@@ -14,8 +14,7 @@ public class UI {
     }
 
     public static int verifyInput(Scanner input) {
-        boolean proceed = false;
-        while (!proceed) {
+        while (true) {
         try {
             return input.nextInt();
             } catch (InputMismatchException InputError) {
@@ -23,6 +22,5 @@ public class UI {
             input.next();
             }
         }
-        return 0;
     }
 }

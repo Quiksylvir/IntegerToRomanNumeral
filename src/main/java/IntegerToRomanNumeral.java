@@ -17,7 +17,7 @@ public class IntegerToRomanNumeral {
 
     private StringBuilder buildRomanNumeralString(int number, int closestKey) {
             StringBuilder romanNumeralString = new StringBuilder();
-            while (number != 0) {
+            while (true) {
                 romanNumeralString.append(IntegerMap.integerMap.get(closestKey));
                 number -= closestKey;
                 if (number == 0) {
@@ -33,6 +33,6 @@ public class IntegerToRomanNumeral {
             return IntegerMap.integerMap.get(number);
         } else {
             return null;
+        }
     }
 }
-    }
