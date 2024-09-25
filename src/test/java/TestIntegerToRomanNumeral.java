@@ -44,10 +44,18 @@ public class TestIntegerToRomanNumeral {
         String result = converter.convertToRomanNumeral(10);
         Assertions.assertEquals(result, "X");
     }
+
     @Test
     public void TestConvert57toRomanNumeral() {
         IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
         String result = converter.convertToRomanNumeral(57);
         Assertions.assertEquals(result, "LVII");
+    }
+
+    @Test
+    public void TestConvert2999toRomanNumeral() {
+        IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
+        String result = converter.convertToRomanNumeral(2999);
+        Assertions.assertEquals(result, "MMCMXCIX");
     }
 }

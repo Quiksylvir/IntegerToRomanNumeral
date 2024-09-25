@@ -15,7 +15,7 @@ public class IntegerMap {
         integerMap.put(100, "C");
         integerMap.put(400, "CD");
         integerMap.put(500, "D");
-        integerMap.put(900, "DM");
+        integerMap.put(900, "CM");
         integerMap.put(1000, "M");
     }
 }
