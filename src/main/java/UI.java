@@ -5,17 +5,24 @@ public class UI {
     public static void main(String[] args) {
         IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
         Scanner inputToConvertToRomanNumeral = new Scanner(System.in);
+
+            System.out.print("Enter an integer to convert to Roman numeral(s): ");
+            int userInput = verifyInput(inputToConvertToRomanNumeral);
+            String romanNumerals = converter.convertToRomanNumeral(userInput);
+            System.out.printf("\nRoman Numeral: %s\n", romanNumerals);
+
+    }
+
+    public static int verifyInput(Scanner input) {
         boolean proceed = false;
         while (!proceed) {
-            try {
-                System.out.print("Enter an integer to convert to Roman numeral(s): ");
-                String romanNumerals = converter.convertToRomanNumeral(inputToConvertToRomanNumeral.nextInt());
-                System.out.printf("Roman Numeral: %s", romanNumerals);
-                proceed = true;
+        try {
+            return input.nextInt();
             } catch (InputMismatchException InputError) {
-                System.err.println("\nPlease enter only integers");
-                inputToConvertToRomanNumeral.next();
+            System.err.println("\nPlease enter only integers");
+            input.next();
             }
         }
+        return 0;
     }
 }
