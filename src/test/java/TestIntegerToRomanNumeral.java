@@ -18,9 +18,30 @@ public class TestIntegerToRomanNumeral {
     }
 
     @Test
-    public void TestConvertIVtoRomanNumeral() {
+    public void TestConvert4toRomanNumeral() {
         IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
         String result = converter.convertToRomanNumeral(4);
         Assertions.assertEquals(result, "IV");
+    }
+
+    @Test
+    public void TestConvert5toRomanNumeral() {
+        IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
+        String result = converter.convertToRomanNumeral(5);
+        Assertions.assertEquals(result, "V");
+    }
+
+    @Test
+    public void TestConvert9toRomanNumeral() {
+        IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
+        String result = converter.convertToRomanNumeral(9);
+        Assertions.assertEquals(result, "IX");
+    }
+
+    @Test
+    public void TestConvert10toRomanNumeral() {
+        IntegerToRomanNumeral converter = new IntegerToRomanNumeral();
+        String result = converter.convertToRomanNumeral(10);
+        Assertions.assertEquals(result, "X");
     }
 }
